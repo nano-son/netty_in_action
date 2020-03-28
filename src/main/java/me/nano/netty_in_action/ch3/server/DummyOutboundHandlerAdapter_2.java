@@ -9,13 +9,13 @@ import io.netty.channel.ChannelPromise;
 public class DummyOutboundHandlerAdapter_2 extends ChannelOutboundHandlerAdapter {
     @Override
     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
+        System.out.println("[DummyOutboundHandlerAdapter_2::write]: "+msg);
         super.write(ctx, msg, promise);
-        System.out.println("[DummyOutboundHandlerAdapter_1::write]: "+msg);
     }
 
     @Override
     public void flush(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("[DummyOutboundHandlerAdapter_2::flush]");
         super.flush(ctx);
-        System.out.println("[DummyOutboundHandlerAdapter_1::flush]");
     }
 }
