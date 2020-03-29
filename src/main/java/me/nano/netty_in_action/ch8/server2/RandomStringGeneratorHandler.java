@@ -14,7 +14,9 @@ public class RandomStringGeneratorHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("[channelRead]");
-        ctx.write(Unpooled.copiedBuffer(UUID.randomUUID().toString(), CharsetUtil.UTF_8));
+        String randomString = UUID.randomUUID().toString();
+        System.out.println("generated random string: " + randomString);
+        ctx.write(Unpooled.copiedBuffer(randomString, CharsetUtil.UTF_8));
     }
 
     @Override

@@ -27,7 +27,7 @@ public class Server {
                 .channel(NioSocketChannel.class)
                 .remoteAddress(new InetSocketAddress("127.0.0.1", ThirdPatryServer.PORT));
 
-        final AddingSuffixEchoServer serverHandler = new AddingSuffixEchoServer(thirdPartyClientBootstrap);
+        final AddingSuffixEchoHandler serverHandler = new AddingSuffixEchoHandler(thirdPartyClientBootstrap);
 
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
